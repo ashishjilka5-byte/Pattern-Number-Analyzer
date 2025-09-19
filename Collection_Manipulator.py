@@ -2,7 +2,7 @@
 print("Welcome to the Student Data Organizer!")
 print(" ")
 
-stored = {}
+student = {}
 while True:
  print("\nSelect an option:")
  print("1. Add Student")
@@ -29,7 +29,7 @@ while True:
     print(" ")
     tuple_std = (std_id,B_day)
 
-    stored[std_id]={
+    student[std_id]={
         "name": name,
         "Age": Age,
         "Grade": Grade,
@@ -40,11 +40,11 @@ while True:
     print("Student addd successfully!")
     print(" ")
  elif choice ==2:
-      if not stored:
+      if not student:
         print("No Student available.")
       else:
-         for sid in stored:
-            info = stored[sid]
+         for sid in student:
+            info = student[sid]
             print("\nid:",sid)
             print("Name:",info["name"])
             print("Age:",info["Age"])
@@ -54,14 +54,14 @@ while True:
 
  elif choice == 3:
     sid = input("Enter the student ID to update:")
-    if sid in stored:
+    if sid in student:
         name = input("New name:")
         age = input("New age:")
         grade = input("Enter grade:")
         b_day = input("New data of birth(yyyy-mm-dd):")
         sub = input("New subject:")
 
-        stored[sid] = {
+        student[sid] = {
             "name": name,
             "age": age,
             "grade": grade,
@@ -73,26 +73,25 @@ while True:
         print("Student not found")
  elif choice ==4:
      sid = input("Enter Student ID to delete:")
-     if sid in stored:
-         del stored[sid]
+     if sid in student:
+         del student[sid]
          print("Student deleted successfully")
      else:
          print("Student not found")
          # option 5 helping ai google for  understanding
  elif choice == 5:
-         if not stored:
+         if not student:
              print("No subjects yet.")
          else:
              print("Subjects offered:")
-             for sid in stored:
-                 print("ID:", sid, "=>", stored[sid]["sub"])
+             for sid in student:
+                 print("ID:", sid, "=>", student[sid]["sub"])
  elif choice == 6:
      print("Exiting... Goodbye!")
      break
 
  else:
      print("Invalid choice, try again.")
-
 
 
 
